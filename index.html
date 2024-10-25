@@ -1,0 +1,115 @@
+<html>
+<head>
+<script>
+var pan = 0
+var h = 0
+var l = 0
+var a = 0
+
+function panes() {
+  pan = parseInt(prompt("Ingrese cuántos panes desea hacer"));
+  if (0 == pan) {
+    alert("No puede ingresar 0")
+  } else {
+    document.getElementsByClassName("caja")[0].innerHTML = pan + " pan(es)";
+  }
+}
+
+function harina() {
+  h = parseInt(pan / 2)
+  document.getElementsByClassName("caja1")[0].innerHTML = h + " kg";
+}
+
+function levadura() {
+  l = parseInt(pan * 0.3)
+  document.getElementsByClassName("caja2")[0].innerHTML = l + " g";
+}
+
+function agua() {
+  a = parseInt(pan * 0.65)
+  document.getElementsByClassName("caja3")[0].innerHTML = a + " l";
+}
+
+function salyoil() {
+  const sal = ["Sal a gusto, aceite menos de 100 ml", "Sal a gusto, aceite entre 50 y 200 ml", "Sal a gusto, aceite entre 35 ml por pan"];
+  if (pan <= 2) {
+    document.getElementsByClassName("caja4")[0].innerHTML = sal[0];
+  } else if (pan == 3) {
+    document.getElementsByClassName("caja4")[0].innerHTML = sal[1];
+  } else if (pan > 3) {
+    document.getElementsByClassName("caja4")[0].innerHTML = sal[2];
+  }
+}
+
+
+
+
+
+</script>
+<style>
+
+#contenedor {
+  height: 385px;
+  width: 210px;
+  background-color: #666057;
+}
+
+.caja {
+  height: 75px;
+  width: 200px;
+  margin-top: 5px;
+  margin-left: 5px;
+  float: left;
+  background-color: #81796E;
+}
+
+.caja1 {
+  height: 75px;
+  width: 200px;
+  margin-left: 5px;
+  float: left;
+  background-color: #928A7D;
+}
+
+.caja2 {
+  height: 75px;
+  width: 200px;
+  margin-left: 5px;
+  float: left;
+  background-color: #BBBAB6;
+}
+
+.caja3 {
+  height: 75px;
+  width: 200px;
+  margin-left: 5px;
+  float: left;
+  background-color: #CCCCCC;
+}
+
+.caja4 {
+  height: 75px;
+  width: 200px;
+  margin-left: 5px;
+  float: left;
+  background-color: white;
+}
+
+
+</style>
+
+
+</head>
+
+  <body>
+    <div id="contenedor">
+      <div class="caja" onclick="panes()">Introducir cantidad de panes</div>
+      <div class="caja1" onclick="harina()">Cantidad de harina necesaria</div>
+      <div class="caja2" onclick="levadura()">Cantidad de levadura necesaria</div>
+      <div class="caja3" onclick="agua()">Cantidad de agua necesaria</div>
+      <div class="caja4" onclick="salyoil()">Cantidad de sal y aceite necesaria</div>
+    </div>
+  </body>
+
+</html>
+
